@@ -7,9 +7,9 @@ function DisplayMessages({ message }) {
             <div className={message.sender_id === JSON.parse(sessionStorage.getItem('user')).id ? "bubble right" : "bubble left"}
             >
                 <p>
-                    {message.message.description}
+                    {message.message.body}
                 </p>
-                {message.message.image != "" &&
+                {message.message.image != null &&
                     <img src={`data:image/jpeg;base64,${message.message.image}`} style={{ width: "100px", height: "100px" }} />
                 }
             </div>
