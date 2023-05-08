@@ -16,7 +16,6 @@ function Register({ onLoginSuccess }) {
         username: username,
         firstName: fname,
         lastName: lname,
-        age: age,
         email: email,
         password: pwd,
       })
