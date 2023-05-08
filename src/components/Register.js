@@ -1,5 +1,4 @@
 import React from "react";
-
 import axios from "axios";
 
 function Register({ onLoginSuccess }) {
@@ -8,16 +7,15 @@ function Register({ onLoginSuccess }) {
 
     let username = event.target.username.value;
     let pwd = event.target.pwd.value;
-    let fn = event.target.fn.value;
-    let ln = event.target.ln.value;
-    let age = event.target.age.value;
+    let fname = event.target.fn.value;
+    let lname = event.target.ln.value;
     let email = event.target.email.value;
 
     axios
       .post("http://127.0.0.1:8000/api/users", {
         username: username,
-        firstName: fn,
-        lastName: ln,
+        firstName: fname,
+        lastName: lname,
         age: age,
         email: email,
         password: pwd,
@@ -34,7 +32,7 @@ function Register({ onLoginSuccess }) {
         console.log(error);
       });
   };
-
+//not tested yet
   return (
     <>
       <div className="center">
@@ -47,13 +45,10 @@ function Register({ onLoginSuccess }) {
             <input placeholder="password" type="password" name="pwd" />
           </div>
           <div class="inputbox">
-            <input placeholder="first name" name="fn" />
+            <input placeholder="first name" name="fname" />
           </div>
           <div class="inputbox">
-            <input placeholder="last name" name="ln" />
-          </div>
-          <div class="inputbox">
-            <input placeholder="age" name="age" />
+            <input placeholder="last name" name="lname" />
           </div>
           <div class="inputbox">
             <input placeholder="email" name="email" />
