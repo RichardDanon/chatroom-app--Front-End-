@@ -7,8 +7,8 @@ function Register({ onLoginSuccess }) {
 
     let username = event.target.username.value;
     let pwd = event.target.pwd.value;
-    let fname = event.target.fn.value;
-    let lname = event.target.ln.value;
+    let fname = event.target.fname.value;
+    let lname = event.target.fname.value;
     let email = event.target.email.value;
 
     axios
