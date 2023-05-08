@@ -18,7 +18,7 @@ function ChatDisplay() {
           .get(
             "http://127.0.0.1:8000/api/messages/users/" +
               JSON.parse(sessionStorage.getItem("user")).id +
-              "/" +
+              "&&" +
               JSON.parse(sessionStorage.getItem("targetUser")).id
           )
           .then(function (response) {
