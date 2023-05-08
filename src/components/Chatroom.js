@@ -9,10 +9,10 @@ function Chatroom(){
     const formData = new FormData();
 
     if (
-      event.target.elements.desc.value != null ||
-      event.target.elements.desc.value != ""
+      event.target.elements.body.value != null ||
+      event.target.elements.body.value != ""
     )
-      formData.append("body", event.target.elements.desc.value);
+      formData.append("body", event.target.elements.body.value);
     else formData.append("body", " ");
 
     if (event.target.elements.img.files[0] != null) {
@@ -30,10 +30,13 @@ function Chatroom(){
         },
       })
       .then((response) => setMessages([...messages, response.data]))
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        console.log()
+        console.error(error)
+      });
 
     setMessages("");
-    event.target.elements.desc.value = "";
+    event.target.elements.body.value = "";
     event.target.elements.img.value = "";
   };
 
@@ -42,7 +45,7 @@ function Chatroom(){
       <div className="center">
         <form onSubmit={sendMessage}>
           <div class="inputbox">
-            <input name="desc" />
+            <input name="body" />
           </div>
           <div class="inputbox">
             <input
