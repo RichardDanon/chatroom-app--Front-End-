@@ -12,8 +12,8 @@ function Chatroom(){
       event.target.elements.desc.value != null ||
       event.target.elements.desc.value != ""
     )
-      formData.append("description", event.target.elements.desc.value);
-    else formData.append("description", " ");
+      formData.append("body", event.target.elements.desc.value);
+    else formData.append("body", " ");
 
     if (event.target.elements.img.files[0] != null) {
       formData.append("image", event.target.elements.img.files[0]);
