@@ -1,4 +1,4 @@
-import DisplayUsersTemplate from './DisplayUsersTemplate';
+import ChatUser from './ChatUser';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 //This class is the one we use to display the users present in the database
@@ -37,7 +37,7 @@ function DisplayUsers() {
         <div>
             {
                 users.map((user) => (
-                    <DisplayUsersTemplate
+                    <ChatUser
                         key={user.id}
                         user={user}
                     />

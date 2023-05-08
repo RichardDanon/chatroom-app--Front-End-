@@ -1,9 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
-import React from 'react';
 
 function Chatroom(){
-const [messages, setMessages] = useState([]);
+    const [messages, setMessages] = useState([]);
 
   const sendMessage = (event) => {
     event.preventDefault();
@@ -22,10 +21,7 @@ const [messages, setMessages] = useState([]);
       formData.append("image", "");
     }
     formData.append("sender_id", JSON.parse(sessionStorage.getItem("user")).id);
-    formData.append(
-      "receiver_id",
-      JSON.parse(sessionStorage.getItem("targetUser")).id
-    );
+    formData.append("receiver_id",JSON.parse(sessionStorage.getItem("targetUser")).id);
 
     axios
       .post("http://127.0.0.1:8000/api/messages", formData, {
@@ -65,4 +61,4 @@ const [messages, setMessages] = useState([]);
   );
 }
 
-export default Chatroom();
+export default Chatroom;

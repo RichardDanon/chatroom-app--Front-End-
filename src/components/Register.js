@@ -35,7 +35,7 @@ function Register({ onLoginSuccess }) {
   return (
     <>
       <div className="center">
-        <h1>Sign in</h1>
+        <h1>Sign up</h1>
         <form onSubmit={createUser}>
           <div class="inputbox">
             <input placeholder="username" name="username" />

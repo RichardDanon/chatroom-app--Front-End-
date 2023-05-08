@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Login from './components/Login';
 import ChatRoom from './components/Chatroom';
 import ChatDisplay from './components/ChatDisplay';
-import ChatUser from './components/ChatUser';
+import DisplayUsers from './components/DisplayUsers';
 import Register from './components/Register';
 
 
@@ -44,7 +44,7 @@ function App() {
     {isLoggedIn && (
       <>
         <div>
-        <ChatUser/>
+        <ChatDisplay />
           <ChatRoom />
           <button className='submitButton'
             onClick={() => {
@@ -59,7 +59,7 @@ function App() {
         </div>
         <div style={{ margin: "20px" }}>
           Recipients:
-        <ChatUser />
+        <DisplayUsers />
         </div>
       </>
     )}
